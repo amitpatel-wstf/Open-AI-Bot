@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node src/index.ts",
-    "dev": "ts-node-dev --respawn src/index.ts"
+    "dev": "ts-node --respawn src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +18,10 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
-    "grammy": "^1.30.0"
+    "grammy": "^1.30.0",
+    "pino": "^9.4.0",
+    "pino-pretty": "^11.2.2",
+    "znv": "^0.4.0",
+    "zod": "^3.23.8"
   }
 }
