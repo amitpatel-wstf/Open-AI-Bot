@@ -1,6 +1,6 @@
 import { Bot } from "grammy";
 import { config } from "./config";
-import { createCommandMenu } from "./command";
+import { createCommandMenu } from "./command/command";
 
 export default class BotServices {
   static instance: BotServices | null = null;

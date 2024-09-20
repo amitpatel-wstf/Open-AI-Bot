@@ -1,10 +1,11 @@
 import { Bot } from "grammy";
-import { createCommandMenu } from "./command";
+import { createCommandMenu } from "./command/command";
 import { config } from "./config";
 import { logger } from "./logger";
 import { getResponse } from "./API/getResponse";
 import Bucket from "./storage/bucketServices";
 import BucketServices from "./storage/bucketServices";
+import { app } from "./app/app";
 
 // Create an instance of the `Bot` class and pass your bot token to it.
 const bot = new Bot(config.BOT_TOKEN); // <-- put your bot token between the ""
@@ -35,6 +36,11 @@ bot.on("message", async (ctx) => {
   ctx.reply(reponse);
 });
 
+app.listen(config.PORT,()=>{
+  console.log(`Server is running on port ${config.PORT}`);
+})
+
 bot.start().then(() => {
+  
   logger.info("Bot Server");
 });
